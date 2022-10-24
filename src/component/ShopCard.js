@@ -1,5 +1,6 @@
 import React from 'react'
 import style from './layout.module.css'
+import Gambar from '../assets/kaos.jpg'
 
 // import style from './layout.module.css'
 
@@ -33,8 +34,9 @@ const ShopCard = () => {
 
         <div className={'container'}>
             <div className={style.card_short}>
-                <div className={style.card_short_image}></div>
-               
+                <div className={style.card_short_image}>
+                    <img src={Gambar} alt="Gambar kaos" width={170}/>
+                </div>
                 <a>
                 <div className={style.card_short_description}>
                     <h4><b>Kemeja Unisex</b></h4>
