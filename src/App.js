@@ -22,6 +22,7 @@ import Login from "./pages/login.js";
 import Register from "./pages/register.js";
 import Home from "./pages/home.js";
 import Dashboard from "./pages/dashboard.js";
+import Add from "./pages/add.js";
 // import Homepage from "./pages/Homepage.js";
 // import Article from "./pages/Article";
 // import ArticleDetails from "./pages/ArticleDetails";
@@ -51,6 +52,9 @@ const App = () => {
           <Route path="/home" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/add" element={<Add />} />
+
+          
           
           {/* <Route path="/profile" element={<Profile />} /> */}
           {/* <Route path="/profile/edit" element={<EditProfile />} /> */}
