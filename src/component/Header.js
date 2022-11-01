@@ -1,5 +1,5 @@
-import React from 'react';
-import { FaSignOutAlt} from "react-icons/fa";
+import React, {Component} from 'react';
+import { FaSignOutAlt, FaEdit, FaTrashAlt} from "react-icons/fa";
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { logout, reset } from '../features/auth/authSlice';
@@ -32,21 +32,37 @@ const Header = () => {
                                     <a className="nav-link text-light" href="#">Kategori</a>
                                 </li>
                                 <li className="nav-item ">
-                                    <a className="nav-link text-light" href="#">Keranjang</a>
+                                    <Link to={"/add"} className="nav-link">add</Link>
                                 </li>
                                 <li className="nav-item ">
                                 <div class="ml-12 flex">
                                     <button
+                                    class="flex self-center ml-2 text-sm whitespace-nowrap text-white">
+                                        <span className="self-center">
+                                            <FaEdit/>
+                                        </span>
+                                    <span className="ml-2">Edit</span>
+                                    </button>
+                                </div>
+                                <div class="ml-12 flex">
+                                    <button
+                                    class="flex self-center ml-2 text-sm whitespace-nowrap text-white">
+                                        <span className="self-center">
+                                            <FaTrashAlt/>
+                                        </span>
+                                    <span className="ml-2">Delete</span>
+                                    </button>
+                                </div>
+                                <div class="ml-12 flex">
+                                    <button
                                     onClick={onLogout}
-                                    class="flex self-center ml-2 text-sm whitespace-nowrap text-white"
-                                    >
+                                    class="flex self-center ml-2 text-sm whitespace-nowrap text-white">
                                         <span className="self-center">
                                             <FaSignOutAlt/>
                                         </span>
-                                    <span className="ml-2">KELUAR</span>
+                                    <span className="ml-2">Keluar</span>
                                     </button>
                                 </div>
-                                    {/* <a className="nav-link text-light" href="#">Logout</a> */}
                                 </li>
                             </ul>
                         </div>

@@ -14,7 +14,7 @@ const ShopGrid = () => {
             <ShopCard/>
           </div>
         </div>
-        <div className='row py-4'> 
+        {/* <div className='row py-4'> 
           <div className='col d-flex'>
             <ShopCard/>
             <ShopCard/>
@@ -27,7 +27,7 @@ const ShopGrid = () => {
             <ShopCard/>
             <ShopCard/>
           </div>
-        </div>
+        </div> */}
       </div>
     )
   
