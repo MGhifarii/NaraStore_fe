@@ -17,7 +17,7 @@ const Header = () => {
     return (
         <>
             <header className="spacing-sm sticky-top">
-            <div className="container-fluid">
+            <div className="container-fluid w-100">
                 <bottom>
                     <div className="navbar navbar-expand-lg navbar-light bg-primary">
                         <a className="navbar-brand mb-0 h1 text-light" href="#" >
