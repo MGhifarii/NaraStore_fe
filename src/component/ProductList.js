@@ -112,7 +112,7 @@ export default class ProductList extends Component {
                         {products &&
                             products.map((product, index) =>(
                                 <li
-                                className={"list-group-item" + (indec === currentIndex ? "active" : "")} 
+                                className={"list-group-item" + (index === currentIndex ? "active" : "")} 
                                 onClick={() => this.setActiveProduct(product, index)}
                                 key={index}
                                 >

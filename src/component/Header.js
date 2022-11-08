@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { FaSignOutAlt, FaEdit, FaTrashAlt} from "react-icons/fa";
+import { FaSignOutAlt, FaEdit,FaPlusSquare} from "react-icons/fa";
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { logout, reset } from '../features/auth/authSlice';
@@ -25,32 +25,25 @@ const Header = () => {
                         <div className="collapse-navbar-collapse ml-auto">
                             <ul className="navbar-nav ">
                                 <li className="nav-item ">
-                                    <a className="nav-link text-light" href="#">Home 
-                                     <span className="sr-only">(current)</span></a>
-                                </li>
-                                <li className="nav-item ">
-                                    <a className="nav-link text-light" href="#">Kategori</a>
-                                </li>
-                                <li className="nav-item ">
-                                    <Link to={"/add"} className="nav-link">add</Link>
-                                </li>
-                                <li className="nav-item ">
                                 <div class="ml-12 flex">
-                                    <button
-                                    class="flex self-center ml-2 text-sm whitespace-nowrap text-white">
+                                    <button class="flex self-center ml-2 text-sm whitespace-nowrap text-white">
                                         <span className="self-center">
-                                            <FaEdit/>
+                                            <FaPlusSquare/>
                                         </span>
-                                    <span className="ml-2">Edit</span>
+                                    <Link to={"/add"}>
+                                        <span className="ml-2">Add</span>
+                                    </Link>
                                     </button>
                                 </div>
                                 <div class="ml-12 flex">
                                     <button
                                     class="flex self-center ml-2 text-sm whitespace-nowrap text-white">
                                         <span className="self-center">
-                                            <FaTrashAlt/>
+                                            <FaEdit/>
                                         </span>
-                                    <span className="ml-2">Delete</span>
+                                    <Link to={"/product"}>
+                                        <span className="ml-2">Edit</span>
+                                    </Link>
                                     </button>
                                 </div>
                                 <div class="ml-12 flex">

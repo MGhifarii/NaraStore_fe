@@ -1,32 +1,33 @@
-import http from "../../http-common";
+import axios from "axios";
 
 class ProductService {
     getAll(){
-        return http.get("/products");
+        return axios.get("/products");
     }
 
     get(id){
-        return http.get(`/products/${id}`);
+        return axios.get(`/products/${id}`);
     }
 
     create(data){
-        return http.post("/products", data);
+        console.log(data)
+        return axios.post("/products", data);
     }
 
     update(id, data){
-        return http.put(`/products/${id}`, data);
+        return axios.put(`/products/${id}`, data);
     }
 
     delete(id){
-        return http.delete(`/products/${id}`);
+        return axios.delete(`/products/${id}`);
     }
 
     deleteAll(){
-        return http.delete("/products");
+        return axios.delete("/products");
     }
 
     findByName(name){
-        return http.get(`/products?name=${name}`);
+        return axios.get(`/products?name=${name}`);
     }
 }
 

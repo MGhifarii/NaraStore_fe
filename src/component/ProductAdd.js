@@ -1,5 +1,7 @@
 import React, {Component} from "react";
 import productService from "../features/product/productService";
+import axios from "axios";
+import { Link } from "react-router-dom";
 
 export default class ProductAdd extends Component{
   constructor(props){
@@ -44,21 +46,43 @@ export default class ProductAdd extends Component{
       description: this.state.description,
       prize: this.state.prize
     };
+    console.log(data)
 
-    productService.create(data)
-      .then(response => {
-        this.setState({
-          id: response.data.id,
-          name: response.data.name,
-          description: response.data.description,
-          prize: response.data.prize,
-          published: response.data.published,
-          submitted: true
+    axios.post('http://localhost:5000/api/products/', data,
+    {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(response => {
+          this.setState({
+            id: response.data.id,
+            name: response.data.name,
+            description: response.data.description,
+            prize: response.data.prize,
+            published: response.data.published,
+            submitted: true
+          });
+          console.log(response.data);
+        }).catch(e => {
+          console.log(e);
         });
-        console.log(response.data);
-      }).catch(e => {
-        console.log(e);
-      });
+
+    // productService.create(data)
+    //   .then(response => {
+    //     this.setState({
+    //       id: response.data.id,
+    //       name: response.data.name,
+    //       description: response.data.description,
+    //       prize: response.data.prize,
+    //       published: response.data.published,
+    //       submitted: true
+    //     });
+    //     console.log(response.data);
+    //   }).catch(e => {
+    //     console.log(e);
+    //   });
+
   }
 
   newProduct(){
@@ -82,6 +106,10 @@ export default class ProductAdd extends Component{
             <button className="btn btn-success" onClick={this.newProduct}>
               Add
             </button>
+            <Link to={"/home"}>
+              <button className="btn btn-success">Home</button>
+            </Link>
+
           </div>
         ) : (
           <div>

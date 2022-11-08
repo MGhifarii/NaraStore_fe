@@ -41,7 +41,7 @@ export default class Product extends Component{
         });
     }
 
-    onChangeDescription(){
+    onChangeDescription(e){
         const description = e.target.value;
 
         this.setState(function(prevState){
@@ -54,7 +54,7 @@ export default class Product extends Component{
         });
     }
 
-    onChangePrize(){
+    onChangePrize(e){
         const prize = e.target.value;
 
         this.setState(function(prevState){
@@ -73,7 +73,7 @@ export default class Product extends Component{
             this.setState({
                 currentProduct: response.data
             });
-            console.log(e);
+            console.log(id);
         });
     }
 

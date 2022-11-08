@@ -23,6 +23,7 @@ import Register from "./pages/register.js";
 import Home from "./pages/home.js";
 import Dashboard from "./pages/dashboard.js";
 import Add from "./pages/add.js";
+import Product from "./pages/product.js";
 // import Homepage from "./pages/Homepage.js";
 // import Article from "./pages/Article";
 // import ArticleDetails from "./pages/ArticleDetails";
@@ -30,6 +31,7 @@ import Add from "./pages/add.js";
 // import EditProfile from "./pages/EditProfile";
 // import Navbar from "./components/Navbar.js";
 import "./styles/App.css";
+// import Product from "./component/product.js";
 
 // import VehicleList from "./pages/admin/vehicle-crud/VehicleList.js";
 // import VehicleCreateForm from "./pages/admin/vehicle-crud/VehicleCreateForm.js";
@@ -53,6 +55,7 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/add" element={<Add />} />
+          <Route path="/product" element={<Product />} />
 
           
           
