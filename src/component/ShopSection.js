@@ -15,9 +15,7 @@ const ShopSection = () => {
         <div className={`${style.row_hero} ${"d-flex"}`}>
             <div className='col-1'></div>
             <div className={`${style.hero_image} ${"col-5"}`}>
-                {/* <img src="ShopImage"></img> */}
                 <img src={ShopImage} alt="Shop Image" width={632} height={666}/>
-            
             </div>
             <div className={`${style.hero_container} ${"col-4"}`}>
                 <h1> Take Your Stuff</h1>

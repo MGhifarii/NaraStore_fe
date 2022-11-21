@@ -24,6 +24,7 @@ import Home from "./pages/home.js";
 import Dashboard from "./pages/dashboard.js";
 import Add from "./pages/add.js";
 import Product from "./pages/product.js";
+import EditProduct from "./pages/editproduct";
 // import Homepage from "./pages/Homepage.js";
 // import Article from "./pages/Article";
 // import ArticleDetails from "./pages/ArticleDetails";
@@ -56,6 +57,8 @@ const App = () => {
           <Route path="/register" element={<Register />} />
           <Route path="/add" element={<Add />} />
           <Route path="/product" element={<Product />} />
+          <Route path="/edit-product" element={<EditProduct />} />
+          
 
           
           

@@ -2,6 +2,8 @@ import React, {Component} from "react";
 import productService from "../features/product/productService";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import style from './layout.module.css';
+import Success from '../assets/Checklist.jpg'
 
 export default class ProductAdd extends Component{
   constructor(props){
@@ -97,24 +99,28 @@ export default class ProductAdd extends Component{
     });
   }
 
+  
+
   render(){
     return(
       <div className="submit-form">
         {this.state.submitted ? (
-          <div>
-            <h4>You Submitted Successfully!</h4>
-            <button className="btn btn-success" onClick={this.newProduct}>
-              Add
-            </button>
+          <div style={{textAlign:"center"}}>
+            <h1 style={{fontSize: '3rem', fontWeight: 'bold', textAlign: 'center',  margin: '5rem 0 1rem'}}>You Submitted Successfully!</h1>
+            <div className={`${style.hero_image} ${"col-5"}`}>
+                <img src={Success} alt="Success" width={632} height={666}/>
+            </div>
+           
+            <button className="btn btn-success" onClick={this.newProduct} style={{background: '#4361EE', fontWeight: '500', TextAlign:"center"}}>Add</button>
             <Link to={"/home"}>
-              <button className="btn btn-success">Home</button>
+              <button className="btn btn-success" style={{background: '#4361EE', fontWeight: '500', TextAlign:"center"}}>Home</button>
             </Link>
 
           </div>
         ) : (
-          <div>
-            <div className="form-group">
-              <label htmlFor="name">Nama</label>
+          <div style={{textAlign:"center"}}>
+            <div className="mb-3" style={{width:"30%", margin:"2rem auto", textAlign:"center"}}>
+              <label>Nama</label>
               <input
                 type= "text"
                 className="form-control"
@@ -123,10 +129,11 @@ export default class ProductAdd extends Component{
                 value={this.state.name}
                 onChange={this.onChangeName}
                 name="name"
+                border="2px solid #ECECEC"
               />
             </div>
 
-            <div className="form-group">
+            <div className="mb-3" style={{width:"30%", margin:"2rem auto", textAlign:"center"}}>
               <label htmlFor="description">Description</label>
               <input
                 type= "text"
@@ -139,7 +146,7 @@ export default class ProductAdd extends Component{
               />
             </div>
 
-            <div className="form-group">
+            <div className="mb-3" style={{width:"30%", margin:"2rem auto", textAlign:"center"}}>
               <label htmlFor="prize">Prize</label>
               <input
                 type= "text"
@@ -152,10 +159,11 @@ export default class ProductAdd extends Component{
               />
             </div>
 
-            <button onClick={this.saveProduct} className="btn btn-success">
+            <button onClick={this.saveProduct} className="btn btn-success"  style={{background: '#4361EE', fontWeight: '500', TextAlign:"center"}}>
               Submit
             </button>
           </div>
+          
         )}
       </div>
     );

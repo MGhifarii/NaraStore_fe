@@ -17,10 +17,10 @@ const Header = () => {
     return (
         <>
             <header className="spacing-sm sticky-top">
-            <div className="container-fluid w-100">
+            <div className="container-fluid w-100 p-0">
                 <bottom>
                     <div className="navbar navbar-expand-lg navbar-light bg-primary">
-                        <a className="navbar-brand mb-0 h1 text-light" href="#" >
+                        <a className="navbar-brand mb-0 h1 text-light" href="/" >
                          <span>NaraStore</span></a>
                         <div className="collapse-navbar-collapse ml-auto">
                             <ul className="navbar-nav ">
@@ -41,7 +41,7 @@ const Header = () => {
                                         <span className="self-center">
                                             <FaEdit/>
                                         </span>
-                                    <Link to={"/product"}>
+                                    <Link to={"/edit-product"}>
                                         <span className="ml-2">Edit</span>
                                     </Link>
                                     </button>

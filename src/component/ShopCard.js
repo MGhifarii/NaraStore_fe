@@ -4,7 +4,8 @@ import Gambar from '../assets/kaos.jpg'
 
 // import style from './layout.module.css'
 
-const ShopCard = () => {
+const ShopCard = (props) => {
+    const { name, description, prize } = props
     return (
         <>
         {/* <br></br>
@@ -32,22 +33,20 @@ const ShopCard = () => {
 
         
 
-        <div className={'container'}>
+        <div className={'container mx-auto'}>
             <div className={style.card_short}>
                 <div className={style.card_short_image}>
-                    <img src={Gambar} alt="Gambar kaos" width={170}/>
+                    {/* <img src={Gambar} alt="Gambar kaos" width={170}/> */}
                 </div>
                 <a>
                 <div className={style.card_short_description}>
-                    <h4><b>Kemeja Unisex</b></h4>
+                    <h4><b>{name}</b></h4>
                     <div className='row'>
-                        <div className='col-9'><h6> Bahan Kain Katun  </h6></div>
-                        <div className='col-1'><span>*****</span> </div>
+                        <div className='col-9'><h6> {description}  </h6></div>
+                        <div className='col-1'><span>{prize}</span> </div>
                     </div> 
                 </div>
-                </a>
-            
-                    
+                </a>  
             </div>
         </div>
 
