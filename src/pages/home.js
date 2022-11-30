@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import Header from '../component/Header.js'
 import ShopCard from '../component/ShopCard.js'
-import ShopGrid from '../component/ShopGrid.js'
 import { getAllProduct } from '../features/product/productSlice.js'
 import { useDispatch, useSelector } from 'react-redux'
 

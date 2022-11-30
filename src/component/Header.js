@@ -41,7 +41,7 @@ const Header = () => {
                                         <span className="self-center">
                                             <FaEdit/>
                                         </span>
-                                    <Link to={"/edit-product"}>
+                                    <Link to={"/detail"}>
                                         <span className="ml-2">Edit</span>
                                     </Link>
                                     </button>

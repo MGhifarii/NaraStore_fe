@@ -143,7 +143,7 @@ export default class ProductList extends Component {
                             </div>
                             <div>
                                 <label>
-                                    <strong>Prize:</strong>
+                                    <strong>Price:</strong>
                                 </label>{" "}
                                 {currentProduct.Prize}
                             </div>
