@@ -58,14 +58,14 @@ const Product = () => {
     const { product } = useSelector((state) => state.product)
     const dispatch = useDispatch()
     
-    useEffect(() => {
-      (async () => {
-      await dispatch(getAllProduct())
+    // useEffect(() => {
+    //   (async () => {
+    //   await dispatch(getAllProduct())
   
-    })()
+    // })()
   
-    dispatch(getAllProduct())
-    }, [])
+    // dispatch(getAllProduct())
+    // }, [])
 
 
     const [formData,  setFormData] = useState({
@@ -77,21 +77,30 @@ const Product = () => {
     useEffect(() => {
         (async () => {
             const data = await dispatch(getProductById(id))
+            console.log(data.payload.name)
             
             setFormData({
-                name: data.payload.product.name,
-                description: data.payload.product.description,
-                prize: data.payload.product.prize,
+                name: data.payload.name,
+                description: data.payload.description,
+                prize: data.payload.prize,
             })
         })()
         
     }, [])
 
     const onSubmit = (e) => {
-        e.preventDefault()
-
-        dispatch(updateProduct({id, product: formData}))
-        dispatch(reset())
+        (async () => {
+            e.preventDefault()
+    
+            const form = new FormData();
+            form.append("name", formData.name);
+            form.append("description", formData.description);
+            form.append("Prize", formData.prize);
+            
+    
+            await dispatch(updateProduct({id, product: form}))
+    
+            })()
     }
 
     const onChange = (e) => {

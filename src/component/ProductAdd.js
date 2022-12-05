@@ -147,7 +147,7 @@ export default class ProductAdd extends Component{
             </div>
 
             <div className="mb-3" style={{width:"30%", margin:"2rem auto", textAlign:"center"}}>
-              <label htmlFor="prize">Prize</label>
+              <label htmlFor="prize">Price</label>
               <input
                 type= "text"
                 className="form-control"

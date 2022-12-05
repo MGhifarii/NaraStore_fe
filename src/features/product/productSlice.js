@@ -97,7 +97,8 @@ export const deleteProduct = createAsyncThunk(
   "product/deleteProduct",
   async (id, thunkAPI) => {
     try {
-      const token = thunkAPI.getState().authOwner?.owner?.data?.token;
+      const token = thunkAPI.getState().auth?.user?.token;
+      console.log(token)
       const response = await ProductService.deleteProduct(id, token);
       return response;
     } catch (error) {

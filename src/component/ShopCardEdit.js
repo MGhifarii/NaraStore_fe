@@ -118,8 +118,9 @@ import axios from 'axios'
 // import style from './layout.module.css'
 
 const ShopCardEdit = (props) => {
-    const { name, description, prize } = props
+    const { name, description, prize, id } = props
     const { product, setProduct } = useSelector((state) => state.product)
+
     const dispatch = useDispatch()
     
   //   useEffect(() => {
@@ -136,17 +137,21 @@ const ShopCardEdit = (props) => {
   //  dispatch(getAllProduct())
   //  }, [dispatch])
 
-  const getAllProduct = async () => {
-    const response = axios.get(`http://localhost:5000/api/products/`);
-    setProduct(response.data);
-  }
+  // const getAllProduct = async () => {
+  //   const response = axios.get(`http://localhost:5000/api/products/`);
+  //   setProduct(response.data);
+  // }
 
-  const deleteProduct = async (id) => {
-    axios.delete(`http://localhost:5000/api/products/${id}`);
-    getAllProduct();
-   }
+  // const deleteProduct = async (id) => {
+  //   axios.delete(`http://localhost:5000/api/products/${id}`);
+  //   getAllProduct();
+  //  }
    
-
+    const handleDelete = async (id) => {
+    await dispatch(deleteProduct(id))
+    window.location.reload()
+    await dispatch(getAllProduct())
+    }
     return (
         <>
         <div className={'container mx-auto'}>
@@ -160,10 +165,10 @@ const ShopCardEdit = (props) => {
                      drop='end' 
                      name={<BsThreeDotsVertical style={{color: 'grey'}} />}
                      >
-                     <Dropdown.Item href={`/edit-product/${product.id}`}>
+                     <Dropdown.Item href={`/edit-product/${id}`}>
                          Ubah
                      </Dropdown.Item>
-                     <Dropdown.Item onClick={() => deleteProduct(product.id)}>Hapus</Dropdown.Item>
+                     <Dropdown.Item onClick={() => handleDelete(id)}>Hapus</Dropdown.Item>
                    </DropdownButton>
                  </Col>
                 <a>
