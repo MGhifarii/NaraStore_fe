@@ -10,29 +10,6 @@ import axios from 'axios'
 
 
 const Product = () => {
-
-    
-    // this.onChangeName = this.onChangeName.bind(this);
-    // this.onChangeDescription = this.onChangeDescription.bind(this);
-    // this.onChangePrize = this.onChangePrize.bind(this);
-    // this.getProductById = this.getProductById.bind(this);
-    // this.updateProduct = this.updateProduct.bind(this);
-    // this.deleteProduct = this.deleteProduct.bind(this);
-
-    // this.state = {
-    //     currentProduct: {
-    //         id: null,
-    //         name: "",
-    //         description: "",
-    //         prize: "",
-    //     },
-    //     message: ""
-    // }
-
-    //deklarasi edit
-    // const [name, setName] = useState('');
-    // const [description, setDescription] = useState('');
-    // const [prize, setPrize] = useState('');
     const { id } = useParams();
 
     // const updateProduct = async (e) => {
